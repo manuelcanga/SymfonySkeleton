@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+case "$1" in
+  start)
+    # Executes composer and restarts web server
+    docker exec my_app symfony server:stop
+    docker exec my_app composer update
+    docker exec my_app symfony server:start
+    ;;
+
+  tests)
+    # Executes unit tests
+   docker exec my_app /var/www/html/bin/phpunit --testdox tests $*
+   ;;
+
+ *)
+  docker exec my_app $*
+  # example 1: bin/my_app composer update
+  # example 2: bin/my_app symfony server:stop
+
+esac

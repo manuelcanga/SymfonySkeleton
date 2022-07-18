@@ -1,0 +1,3 @@
+say_hello:
+    path: /
+    controller: MyAPP\Modules\Welcome\Infrastructure\WelcomeController

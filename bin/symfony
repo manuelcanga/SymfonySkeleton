@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+docker exec my_app symfony $*
+
